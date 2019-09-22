@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>JAVA面向对象 | an9527@aliyun.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JAVA面向对象的思维面向对象三大基本特征：封装、继承、多态。而面向对象的过程就是围绕对象进行工作的过程。  类是一种数据类型 对象则是这种类型的一个具体实例对象分为两个部分，动态部分【行为】与静态部分[描述]。 ①静态部分：顾名思义就是不能动的部分，这个部分被称为“属性”，任何对象都会具备其自身属性，如一个人，它包括高矮、胖瘦、性别、年龄等属性。②动态部分：具有这些属性的人会执行哪些动作这个人可">
+<meta name="keywords" content="basecommon.cn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA面向对象">
+<meta property="og:url" content="http://yoursite.com/2017/04/21/oop/index.html">
+<meta property="og:site_name" content="an9527@aliyun.com">
+<meta property="og:description" content="JAVA面向对象的思维面向对象三大基本特征：封装、继承、多态。而面向对象的过程就是围绕对象进行工作的过程。  类是一种数据类型 对象则是这种类型的一个具体实例对象分为两个部分，动态部分【行为】与静态部分[描述]。 ①静态部分：顾名思义就是不能动的部分，这个部分被称为“属性”，任何对象都会具备其自身属性，如一个人，它包括高矮、胖瘦、性别、年龄等属性。②动态部分：具有这些属性的人会执行哪些动作这个人可">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2019-09-21T13:01:08.494Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA面向对象">
+<meta name="twitter:description" content="JAVA面向对象的思维面向对象三大基本特征：封装、继承、多态。而面向对象的过程就是围绕对象进行工作的过程。  类是一种数据类型 对象则是这种类型的一个具体实例对象分为两个部分，动态部分【行为】与静态部分[描述]。 ①静态部分：顾名思义就是不能动的部分，这个部分被称为“属性”，任何对象都会具备其自身属性，如一个人，它包括高矮、胖瘦、性别、年龄等属性。②动态部分：具有这些属性的人会执行哪些动作这个人可">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">an9527@aliyun.com</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">鄙人邮箱欢迎骚扰</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-oop" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/21/oop/" class="article-date">
+  <time datetime="2017-04-21T12:40:43.000Z" itemprop="datePublished">2017-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JAVA面向对象
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JAVA面向对象的思维"><a href="#JAVA面向对象的思维" class="headerlink" title="JAVA面向对象的思维"></a>JAVA面向对象的思维</h2><pre><code>面向对象三大基本特征：封装、继承、多态。而面向对象的过程就是围绕对象进行工作的过程。
+
+类是一种数据类型
+对象则是这种类型的一个具体实例</code></pre><p>对象分为两个部分，动态部分【行为】与静态部分[描述]。</p>
+<p>①静态部分：顾名思义就是不能动的部分，这个部分被称为“属性”，任何对象都会具备其自身属性，如一个人，它包括高矮、胖瘦、性别、年龄等属性。<br>②动态部分：具有这些属性的人会执行哪些动作这个人可以哭泣、微笑、说话、行走，这些是这个人具备的行为（动态部分），<br>.Java语言的设计思想：希望将现实生活中的，对象与对象之间的关系在计算机系统得以体现，从而构建计算机系统<br>        对于事物的思考：需要类，需要对象【万事万物皆对象   万事万物皆可分类】<br>          类：对于类思考：万事万物简单思考：<br>          类：具备两大特性【属性】<br>              1.静态属性：信息描述，学生，姓名，年龄 ，身高<br>              2.动态行为：处理数据，人来说：会走，会跑……</p>
+<p><strong>封装</strong><br>通过给类中的成员（字段，方法，构造方法）添加访问权限来实现访问控制</p>
+<p><strong>继承</strong><br>(1)泛化和特化<br>    <em>①泛华：在多个子类的基础上面抽取共有属性的行为到一个父类中去<br>    ②特化：在一个父类的基础上拓展子类特有的属性和行为，生成一个新的子类<br>    ③原则：父类存放共性，子类存放特性</em><br>(2)Java中类的继承特点<br>    <em>①Java中类的继承是单继承<br>    ②可以支持多重继承每一个类都//也就是间接继承<br>    ③有一个直接父类,如果没有看到显示的继承代码,那么就隐式继承就Object</em><br>(3)继承到父类的那些东西<br>    <em>①非私有的字段及方法<br>    ②父类特性<br>    ③静态方法不能被覆写</em><br>1)如果是父类装子类对象调父类和子类都有的静态方法，会调用父类方法</p>
+<p><strong>多态</strong><br>(1)一种事物的多种形态<br>(2)使用aml：装入子类对象存在多种可能性：<br>(3)编译是看的是Animal类型【只看类型不看值】<br>(4)运行时看的是实际存放的对象【真实类型】<br>(5)官方概念：编译时跟运行时类型不一致就产生了多态<br>(6)民间理解：父类类型的变量，存放子类类型的对象，可能存放子类类型的对象有多种可能<br>(7)多态存在的前提：必须有继承关系<br>(8)多态应用<br>①方法参数传递：方法形参父类类型，允许传子类类型对象<br>②方法返回值<br>(9)多态的好处：<br>①屏蔽了不同子类之间实现的差异<br>(10)加强面向对象编程思想：<br>①此处体现java语言设计思想，希望将现实生活中的对象与对象之间的关系在计算机系统得以体现</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/21/oop/" data-id="ck0ulbmb3000494v6pb8glrs2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/02/部分的知识/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          关于注解部分的知识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/21/JAVA中-与equals的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JAVA中==与equals的区别</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/18/cloud与dubbo的区别详解/">Springcloud与dubbo的区别详解</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/10/mybatis/">mybatis中的$与#</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/28/mybatisTwo/">mybatis 的十分详细的入门教程第二弹</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/19/mybatisOne/">mybatis 的十分详细的入门教程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/02/部分的知识/">关于注解部分的知识</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 an9527<br>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

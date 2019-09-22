@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>关于注解部分的知识 | an9527@aliyun.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="所有关于注解的文章都绕不开这四个注解,我们也不例外@Target@Retention@Documented@Inherited接下来就一个个的介绍首先是 @Target这个注解用来标志当前定义的注解是打在哪个位置的,比如类上,方法上,字段上,可以写多个通过源码我们可以看到内部是一个数组,所有可以写多个 12345678910111213@Documented@Retention(Retention">
+<meta name="keywords" content="basecommon.cn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于注解部分的知识">
+<meta property="og:url" content="http://yoursite.com/2017/07/02/部分的知识/index.html">
+<meta property="og:site_name" content="an9527@aliyun.com">
+<meta property="og:description" content="所有关于注解的文章都绕不开这四个注解,我们也不例外@Target@Retention@Documented@Inherited接下来就一个个的介绍首先是 @Target这个注解用来标志当前定义的注解是打在哪个位置的,比如类上,方法上,字段上,可以写多个通过源码我们可以看到内部是一个数组,所有可以写多个 12345678910111213@Documented@Retention(Retention">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190913031812404.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pjZXRwb29y,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-09-21T12:59:18.485Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于注解部分的知识">
+<meta name="twitter:description" content="所有关于注解的文章都绕不开这四个注解,我们也不例外@Target@Retention@Documented@Inherited接下来就一个个的介绍首先是 @Target这个注解用来标志当前定义的注解是打在哪个位置的,比如类上,方法上,字段上,可以写多个通过源码我们可以看到内部是一个数组,所有可以写多个 12345678910111213@Documented@Retention(Retention">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190913031812404.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pjZXRwb29y,size_16,color_FFFFFF,t_70">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">an9527@aliyun.com</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">鄙人邮箱欢迎骚扰</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-部分的知识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/02/部分的知识/" class="article-date">
+  <time datetime="2017-07-02T12:53:52.000Z" itemprop="datePublished">2017-07-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于注解部分的知识
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>所有关于注解的文章都绕不开这四个注解,我们也不例外<br>@Target<br>@Retention<br>@Documented<br>@Inherited<br>接下来就一个个的介绍<br>首先是 <strong>@Target</strong><br>这个注解用来标志当前定义的注解是打在哪个位置的,比如类上,方法上,字段上,可以写多个<br>通过源码我们可以看到内部是一个数组,所有可以写多个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@Documented</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">@Target(ElementType.ANNOTATION_TYPE)</span><br><span class="line">public @interface Target &#123;</span><br><span class="line">    /**</span><br><span class="line">     * Returns an array of the kinds of elements an annotation type</span><br><span class="line">     * can be applied to.</span><br><span class="line">     * @return an array of the kinds of elements an annotation type</span><br><span class="line">     * can be applied to</span><br><span class="line">     *数组表示此属性可以写多个值</span><br><span class="line">     */</span><br><span class="line">    ElementType[] value();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>它可以使用的值有以下这些<br><img src="https://img-blog.csdnimg.cn/20190913031812404.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pjZXRwb29y,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>ElementType是一个枚举类内部就是上面列举出的几个属性当然,也可以不用这个枚举,直接写字符串效果是一样的<br>那么他们分别代表什么呢<br>TYPE:类、接口(包括注解类型) 或enum声明。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">　　　　FIELD:字段声明(包括enum常量).,也就是打在字段上</span><br><span class="line"></span><br><span class="line">　　　　METHOD:方法声明。</span><br><span class="line"></span><br><span class="line">　　　　PARAMTER:形式参数声明。,方法的形参上</span><br><span class="line"></span><br><span class="line">　　　　CONSTRUCTOR:构造函数声明。constructort上</span><br><span class="line"></span><br><span class="line">　　　　LOCAL_VARIABLE：局部变量声明。方法内变量</span><br><span class="line"></span><br><span class="line">　　　　ANNOTATION_TYPE：注解类型声明。打在注解上</span><br><span class="line"></span><br><span class="line">　　　　PACKAGE：包声明</span><br><span class="line"></span><br><span class="line">　　　　TYPE_PARAMETER：参数类型声明</span><br><span class="line"></span><br><span class="line">　　　　TYPE_USE:使用一个类型，详见：java.lang.annotation.ElementType</span><br></pre></td></tr></table></figure>
+
+<p><strong>@Retention 注解</strong><br>指的是注解的生命周期<br>即会保留到哪个阶段。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SOURCE：源码级别保留，编译后即丢弃。</span><br><span class="line">CLASS:编译级别保留，编译后的class文件中存在，在jvm运行时丢弃，这是默认值。</span><br><span class="line">RUNTIME： 运行级别保留，编译后的class文件中存在，在jvm运行时保留，可以被反射调用。</span><br></pre></td></tr></table></figure>
+
+<p><strong>@Documented 注解</strong><br>能被javadoc此类的工具文档化   无值<br><strong>@Inherited注解</strong><br>当你想让你的自定义注解被继承时,可以使用这个注解,也没有参数取值</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/02/部分的知识/" data-id="ck0ulbmb2000394v6clmqh9eq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/19/mybatisOne/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          mybatis 的十分详细的入门教程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/21/oop/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JAVA面向对象</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/18/cloud与dubbo的区别详解/">Springcloud与dubbo的区别详解</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/10/mybatis/">mybatis中的$与#</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/28/mybatisTwo/">mybatis 的十分详细的入门教程第二弹</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/19/mybatisOne/">mybatis 的十分详细的入门教程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/02/部分的知识/">关于注解部分的知识</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 an9527<br>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

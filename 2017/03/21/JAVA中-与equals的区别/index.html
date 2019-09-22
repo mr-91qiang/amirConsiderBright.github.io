@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>JAVA中==与equals的区别 | an9527@aliyun.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="== 和 equals 都是比较是否相等,请问它们到底有什么区别呢?相等 :  传统的理解一般都是数字值是否相等;在程序中任何东西都是数据,都会比较是否相等[ 对象 ] == 比较运算符基本数据类型变量:    比较的就是值是否相等;引用数据类型变量:    比较的是对象的地址是否一样;（排除特殊 String） equals 方法[最初定义在根类Object中的,比较对象是否相等] 基本数据类">
+<meta name="keywords" content="basecommon.cn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA中==与equals的区别">
+<meta property="og:url" content="http://yoursite.com/2017/03/21/JAVA中-与equals的区别/index.html">
+<meta property="og:site_name" content="an9527@aliyun.com">
+<meta property="og:description" content="== 和 equals 都是比较是否相等,请问它们到底有什么区别呢?相等 :  传统的理解一般都是数字值是否相等;在程序中任何东西都是数据,都会比较是否相等[ 对象 ] == 比较运算符基本数据类型变量:    比较的就是值是否相等;引用数据类型变量:    比较的是对象的地址是否一样;（排除特殊 String） equals 方法[最初定义在根类Object中的,比较对象是否相等] 基本数据类">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2019-09-21T12:58:49.518Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA中==与equals的区别">
+<meta name="twitter:description" content="== 和 equals 都是比较是否相等,请问它们到底有什么区别呢?相等 :  传统的理解一般都是数字值是否相等;在程序中任何东西都是数据,都会比较是否相等[ 对象 ] == 比较运算符基本数据类型变量:    比较的就是值是否相等;引用数据类型变量:    比较的是对象的地址是否一样;（排除特殊 String） equals 方法[最初定义在根类Object中的,比较对象是否相等] 基本数据类">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">an9527@aliyun.com</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">鄙人邮箱欢迎骚扰</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JAVA中-与equals的区别" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/21/JAVA中-与equals的区别/" class="article-date">
+  <time datetime="2017-03-21T12:56:06.000Z" itemprop="datePublished">2017-03-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JAVA中==与equals的区别
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> == 和 equals 都是比较是否相等,请问它们到底有什么区别呢?<br>相等 :<br>  传统的理解一般都是数字值是否相等;<br>在程序中任何东西都是数据,都会比较是否相等[ 对象 ]<br> == 比较运算符<br>基本数据类型变量:    比较的就是值是否相等;<br>引用数据类型变量:    比较的是对象的地址是否一样;（排除特殊 String）<br> equals 方法[最初定义在根类Object中的,比较对象是否相等]<br> 基本数据类型 :  不能够使用!   基本数据类型不是对象,不能够调用Object中的方法<br> 引用数据类型 :  但是在Object的源码中定义的就是 == 进行比较比较<br>定义好的类没有覆写过equals方法，则会直接调用到了Object中的equals方法,那么本质还是在使用==比较<br>在实际开发中,自定义类：一般比较对象，都是通过对象的属性值进行比较,所以自定义类，会经常覆写Object中的此方法,把自己的比较规则写在方法里面;<br>⑫覆写equals方法的意义：定义类，覆写equals方法，自己制定规则，比较自定义类对象的静态属性<br>(5)打印过程实际上调用了toString方法</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/21/JAVA中-与equals的区别/" data-id="ck0ulbmav000194v68uz7kje6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/21/oop/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JAVA面向对象
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/18/cloud与dubbo的区别详解/">Springcloud与dubbo的区别详解</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/10/mybatis/">mybatis中的$与#</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/28/mybatisTwo/">mybatis 的十分详细的入门教程第二弹</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/19/mybatisOne/">mybatis 的十分详细的入门教程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/02/部分的知识/">关于注解部分的知识</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 an9527<br>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

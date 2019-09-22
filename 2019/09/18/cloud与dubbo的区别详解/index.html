@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Springcloud与dubbo的区别详解 | an9527@aliyun.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="面试问到的关于spring cloud理解和spring cloud与dubbo的区别详解今天下午面试被问到这个问题,当时没答上来,毕竟之前工作也都只是简单的使用,并没有真正去了解过两个之间的区别晚上自己查了一些文档,有点感悟在这里写一下首先两个都是国内比较火的微服务架构先介绍一下微服务微服务架构是一种架构模式，它将单一应用程序划分成一组小的服务，服务之间互相配合，达到最终的目的 优点是可以将繁杂">
+<meta name="keywords" content="basecommon.cn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Springcloud与dubbo的区别详解">
+<meta property="og:url" content="http://yoursite.com/2019/09/18/cloud与dubbo的区别详解/index.html">
+<meta property="og:site_name" content="an9527@aliyun.com">
+<meta property="og:description" content="面试问到的关于spring cloud理解和spring cloud与dubbo的区别详解今天下午面试被问到这个问题,当时没答上来,毕竟之前工作也都只是简单的使用,并没有真正去了解过两个之间的区别晚上自己查了一些文档,有点感悟在这里写一下首先两个都是国内比较火的微服务架构先介绍一下微服务微服务架构是一种架构模式，它将单一应用程序划分成一组小的服务，服务之间互相配合，达到最终的目的 优点是可以将繁杂">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2019-09-21T12:52:25.367Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Springcloud与dubbo的区别详解">
+<meta name="twitter:description" content="面试问到的关于spring cloud理解和spring cloud与dubbo的区别详解今天下午面试被问到这个问题,当时没答上来,毕竟之前工作也都只是简单的使用,并没有真正去了解过两个之间的区别晚上自己查了一些文档,有点感悟在这里写一下首先两个都是国内比较火的微服务架构先介绍一下微服务微服务架构是一种架构模式，它将单一应用程序划分成一组小的服务，服务之间互相配合，达到最终的目的 优点是可以将繁杂">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">an9527@aliyun.com</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">鄙人邮箱欢迎骚扰</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="spring-cloud与dubbo的区别详解" class="article article-type-spring" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/18/cloud与dubbo的区别详解/" class="article-date">
+  <time datetime="2019-09-18T12:51:48.000Z" itemprop="datePublished">2019-09-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Springcloud与dubbo的区别详解
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>面试问到的关于spring cloud理解和spring cloud与dubbo的区别详解<br>今天下午面试被问到这个问题,当时没答上来,毕竟之前工作也都只是简单的使用,并没有真正去了解过两个之间的区别<br>晚上自己查了一些文档,有点感悟在这里写一下<br>首先两个都是国内比较火的微服务架构<br>先介绍一下微服务<br><strong>微服务架构是一种架构模式，它将单一应用程序划分成一组小的服务，服务之间互相配合，达到最终的目的</strong></p>
+<p>优点是可以将繁杂的代码堆分解,每一个微服务实现单一的功能,并通过接口与其他服务沟通合作<br>每个微服务之间相互独立部署技术使用更加灵活<br>这里先介绍一下我比较熟悉的spring cloud ,它基于Spring Boot实现各种功能</p>
+<h3 id="核心为以下五个"><a href="#核心为以下五个" class="headerlink" title="核心为以下五个"></a>核心为以下五个</h3><h4 id="1-Eureka-注册中心——Netflix-Eureka-功能类似于dubbo的注册中心，比如zookeeper。"><a href="#1-Eureka-注册中心——Netflix-Eureka-功能类似于dubbo的注册中心，比如zookeeper。" class="headerlink" title="1.Eureka 注册中心——Netflix Eureka    功能类似于dubbo的注册中心，比如zookeeper。"></a>1.Eureka 注册中心——Netflix Eureka    功能类似于dubbo的注册中心，比如zookeeper。</h4><p>eureka是一个基于REST的服务，用于定位服务，以实现云端中间层服务发现和故障转移。服务注册与发现对于微服务架构来说是非常重要的，有了服务发现和注册，只需要使用服务的标识符，就可以访问到服务，而不需要修改服务<br>Eureka server提供服务注册和发现.<br> Eureka Server提供服务注册服务。各个服务提供者节点启动后，会在Eureka Server中进行注册，这样Eureka server中的服务存储可用信息并且可以直观的看到.<br>Service Provider服务提供方将自身服务注册到Eureka，从而使服务消费方能够找到。<br>Service Consumer服务消费方从Eureka获取注册服务列表，从而能够消费服务。</p>
+<h4 id="2-客服端负载均衡——Netflix-Ribbon-Feign"><a href="#2-客服端负载均衡——Netflix-Ribbon-Feign" class="headerlink" title="2.客服端负载均衡——Netflix Ribbon/Feign"></a>2.客服端负载均衡——Netflix Ribbon/Feign</h4><p>为了提供并发量，有时同一个服务提供者可以部署多个。这个客户端在调用时要根据一定的负责均衡策略完成负载调用。<br>Ribbon是Netflix发布的云中间层服务开源项目，主要功能是提供客户端负载均衡算法。Ribbon客户端组件提供一系列完善的配置项，如，连接超时，重试等。<br> 比如今天面试就问到了连接超时时间<br> 负载均衡算法最常用的有随机RandomRule和轮询RoundRobinRule两种<br> 代码网上有很多就不一一列出<br> Feign是一个声明式的Web Service客户端，它的目的就是让Web Service调用更加简单,相当于在Ribbon的基础上继续封装了一层,类似于springmvc在servlet的基础上做了一层封装<br> 它 提供了HTTP请求的模板，通过编写简单的接口和插入注解，就可以定义好HTTP请求的参数、格式、地址等信息。会完全代理HTTP请求，<br> 可插拔的注解支持，包括Feign注解和JAX-RS注解;<br>支持可插拔的HTTP编码器和解码器;<br>支持Hystrix和它的Fallback;<br>支持Ribbon的负载均衡;<br>支持HTTP请求和响应的压缩。<br>这看起来有点像我们springmvc模式的Controller层的RequestMapping映射  Feign是用@FeignClient来映射服务的。</p>
+<h4 id="3-服务网关——Netflix-Zuul"><a href="#3-服务网关——Netflix-Zuul" class="headerlink" title="3.服务网关——Netflix Zuul"></a>3.服务网关——Netflix Zuul</h4><p>Zuul 是netflix开源的一个API Gateway 服务器, 本质上是一个web servlet应用。<br>Zuul 在云平台上提供动态路由，监控，弹性，安全等边缘服务的框架。Zuul 相当于是设备和 Netflix 流应用的 Web 网站后端所有请求的前门，也要注册入Eureka.<br>前面这一层俗称为“网关层”，其存在意义在于，将”1对N”问题 转换成了”1对1”问题（路由），同时在请求到达真正的微服务之前，可以做一些预处理（过滤），比如：来源合法性检测，权限校验，反爬虫之类…</p>
+<h4 id="4-断路器——Netflix-Hystrix"><a href="#4-断路器——Netflix-Hystrix" class="headerlink" title="4.断路器——Netflix Hystrix"></a>4.断路器——Netflix Hystrix</h4><p>在理想状态下，一个应用依赖的服务都是健康可用的，我们可以正常的处理所有的请求,但是天有不测风云<br> 当微服务中某一个服务出问题的时候发生延迟，所有的请求都阻塞在依赖的服务,大多数服务器的线程池就出现阻塞(BLOCK),影响整个线上服务的稳定性<br>高并发的依赖失败时如果没有隔离措施，当前应用服务就有被拖垮的风险<br> Hystrix是保证微服务群健壮框架,做了隔离,熔断,降级等操作.最终达到不会由于某一个服务出问题而导致雪崩现象,让整体群死掉.</p>
+<h5 id="资源隔离（限流）："><a href="#资源隔离（限流）：" class="headerlink" title="资源隔离（限流）："></a>资源隔离（限流）：</h5><p> 包括线程池隔离和信号量隔离，限制调用分布式服务的资源使用，某一个调用的服务出现问题不会影响其他服务调用。<br>(1) 线程池隔离模式：使用一个线程池来存储当前请求，线程池对请求作处理，设置任务返回处理超时时间，堆积的请求先入线程池队列。这种方式要为每个依赖服务申请线程池，有一定的资源消耗，好处是可以应对突发流量（大量流量来临时，处理不完可将数据存储到线程池队里慢慢处理）<br>(2）信号量隔离模式：使用一个原子计数器（或信号量）记录当前有多少个线程在运行，请求来先判断计数器的数值，若超过设置的最大线程个数则丢弃该类型的新请求，若不超过则执行计数操作请求来计数器+1，请求返回计数器-1。这种方式是严格的控制线程且立即返回模式，无法应对突发流量（流量洪峰来临时，处理的线程超过数量，其他的请求会直接返回，不继续去请求依赖的服务）</p>
+<h5 id="融断："><a href="#融断：" class="headerlink" title="融断："></a>融断：</h5><p> 当失败率达到阀值自动触发降级(如因网络故障/超时造成的失败率高)，熔断器触发的快速失败会进行快速恢复。<br> 正常情况下，断路器处于关闭状态(Closed)，<br>如果调用持续出错或者超时，电路被打开进入熔断状态(Open)，后续一段时间内的所有调用都会被拒绝(Fail Fast)，<br>一段时间以后，保护器会尝试进入半熔断状态(Half-Open)，允许少量请求进来尝试，<br>        如果调用仍然失败，则回到熔断状态<br>        如果调用成功，则回到电路闭合状态;</p>
+<h5 id="降级机制："><a href="#降级机制：" class="headerlink" title="降级机制："></a>降级机制：</h5><p> 超时降级、资源不足时(线程或信号量)降级，降级后可以配合降级接口返回托底数据。<br> 所谓降级，就是当某个服务熔断之后，服务器将不再被调用，此时客户端可以自己准备一个本地的fallback回调，返回一个缺省值。<br>这样做，虽然服务水平下降，但好歹可用，比直接挂掉要强，当然这也要看适合的业务场景。</p>
+<h5 id="缓存："><a href="#缓存：" class="headerlink" title="缓存："></a>缓存：</h5><p> 提供了请求缓存、请求合并实现。</p>
+<h4 id="5-分布式配置——Spring-Cloud-Config"><a href="#5-分布式配置——Spring-Cloud-Config" class="headerlink" title="5.分布式配置——Spring Cloud Config"></a>5.分布式配置——Spring Cloud Config</h4><p> 微服务架构中，每个项目都有一个yml配置，管理起来麻烦。spring cloud config主要用来管理这些yml<br> 它支持配置服务放在配置服务的内存中（即本地），也支持放在远程Git仓库中。在spring cloud config 组件中，分两个角色，一是config server，二是config client。<br>今天由于时间有限先介绍下概念,改天再具体将代码实现</p>
+<h3 id="接下来说说两者区别"><a href="#接下来说说两者区别" class="headerlink" title="接下来说说两者区别"></a>接下来说说两者区别</h3><p>Dubbo，是阿里巴巴服务化治理的核心框架，在中国被广泛使用；<br>Spring Cloud 是Spring的产品,他们专注开发出通用、开源、稳健的开源框架</p>
+<pre><code>对比了网上一些说法总的来说</code></pre><p>社区活跃度spring更加活跃<br>Dubbo有中文文档对中国开发者来说更加友好<br>Dubbo只是实现了服务治理，而Spring Cloud分别覆盖了微服务架构下的方方面面，服务治理只是其中的一个方面，一定程度来说，Dubbo只是Spring Cloud Netflix中的一个子集。但是在选择框架上，方案完整度恰恰是一个需要重点关注的内容。<br>Dubbo晋升为Apache顶级项目对Dubbo将进一步的优化,潜力无限<br> 并且两者之上还有一个进化版本<br> spring-cloud-dubbo</p>
+<p> <a href="http://springcloud.cn/view/327" target="_blank" rel="noopener">详情见Spring Cloud中国社区</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/18/cloud与dubbo的区别详解/" data-id="ck0ulbmay000294v68foxx1bv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/10/mybatis/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mybatis中的$与#</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/18/cloud与dubbo的区别详解/">Springcloud与dubbo的区别详解</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/10/mybatis/">mybatis中的$与#</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/28/mybatisTwo/">mybatis 的十分详细的入门教程第二弹</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/19/mybatisOne/">mybatis 的十分详细的入门教程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/02/部分的知识/">关于注解部分的知识</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 an9527<br>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>mybatis 的十分详细的入门教程 | an9527@aliyun.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一. mybatis 的十分详细的入门教程mybatis起源?MyBatis 本是apache的一个开源项目iBatis,2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatisiBATIS一词来源于“internet”和“abatis”的组合，是一个基于Java的持久层框架。iBATIS提供的持久层框架包括SQL Maps">
+<meta name="keywords" content="basecommon.cn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mybatis 的十分详细的入门教程">
+<meta property="og:url" content="http://yoursite.com/2018/06/19/mybatisOne/index.html">
+<meta property="og:site_name" content="an9527@aliyun.com">
+<meta property="og:description" content="一. mybatis 的十分详细的入门教程mybatis起源?MyBatis 本是apache的一个开源项目iBatis,2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatisiBATIS一词来源于“internet”和“abatis”的组合，是一个基于Java的持久层框架。iBATIS提供的持久层框架包括SQL Maps">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190801210153975.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190801211818911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pjZXRwb29y,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190801211925878.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pjZXRwb29y,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190801212419633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pjZXRwb29y,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190801213637960.png">
+<meta property="og:updated_time" content="2019-09-21T13:00:01.964Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mybatis 的十分详细的入门教程">
+<meta name="twitter:description" content="一. mybatis 的十分详细的入门教程mybatis起源?MyBatis 本是apache的一个开源项目iBatis,2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatisiBATIS一词来源于“internet”和“abatis”的组合，是一个基于Java的持久层框架。iBATIS提供的持久层框架包括SQL Maps">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190801210153975.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">an9527@aliyun.com</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">鄙人邮箱欢迎骚扰</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="photo-mybatisOne" class="article article-type-photo" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/19/mybatisOne/" class="article-date">
+  <time datetime="2018-06-19T15:14:46.000Z" itemprop="datePublished">2018-06-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mybatis 的十分详细的入门教程
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-mybatis-的十分详细的入门教程"><a href="#一-mybatis-的十分详细的入门教程" class="headerlink" title="一. mybatis 的十分详细的入门教程"></a>一. mybatis 的十分详细的入门教程</h2><h3 id="mybatis起源"><a href="#mybatis起源" class="headerlink" title="mybatis起源?"></a>mybatis起源?</h3><p>MyBatis 本是apache的一个开源项目iBatis,<br>2010年这个项目由apache software foundation 迁移到了google code，<br>并且改名为MyBatis<br>iBATIS一词来源于“internet”和“abatis”的组合，是一个基于Java的持久层框架。<br>iBATIS提供的持久层框架包括SQL Maps（XML映射配置）和Data Access Objects（Dao）</p>
+<h3 id="mybati介绍"><a href="#mybati介绍" class="headerlink" title="mybati介绍"></a>mybati介绍</h3><p>MyBatis 是一个支持普通SQL查询，存储过程(    Oracle最后一天)和高级映射的优秀持久层框架。<br>MyBatis 消除了几乎所有的JDBC代码和手工设置参数以及结果集的检索。<br>MyBatis 使用简单的 XML或注解用于配置和原始映射，将接口和 Java 的POJOs（Plain Old Java Objects，普通的 Java对象）映射成数据库中的记录。<br>MyBatis不能自动创建表，如果能够自动建表，必须自己先准备好建表的sql语句。</p>
+<h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><p> 步骤<br>1 导包<br>2 建表(product)<br>3 domain(Product)<br>4 准备dao层(CRUD)<br>5 测试(不是必需的)<br>注意:我们要引哪些包?<br>1 一定要引入驱动包(不要忘了)<br>2 导入mybatis的核心包<br>3 导入mybatis的依赖包</p>
+<p>jar包可以去网上下载<br><img src="https://img-blog.csdnimg.cn/20190801210153975.png" alt="导入jar包"></p>
+<p>MyBatis-Config.xml配置文件(直接拷贝,后续会讲解)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE configuration PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span><br><span class="line">        &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt; </span><br><span class="line"></span><br><span class="line">&lt;configuration&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!--引入配置文件四大金刚--&gt;</span><br><span class="line">    &lt;properties resource=&quot;db.properties&quot;&gt;&lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--别名--&gt;</span><br><span class="line">    &lt;typeAliases&gt;</span><br><span class="line">        &lt;package name=&quot;cn.itsource.domain&quot;&gt;&lt;/package&gt;</span><br><span class="line">    &lt;/typeAliases&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--环境们--&gt;&lt;!--默认环境--&gt;</span><br><span class="line">    &lt;environments default=&quot;development&quot;&gt;</span><br><span class="line">        &lt;!--环境--&gt;</span><br><span class="line">        &lt;environment id=&quot;development&quot;&gt;</span><br><span class="line"></span><br><span class="line">            &lt;transactionManager type=&quot;JDBC&quot;&gt;&lt;/transactionManager&gt;</span><br><span class="line">            &lt;!--</span><br><span class="line">                dataSource:数据库，连接池(配置四大金刚:driven,url,username,password)</span><br><span class="line">                    type:连接池的类型  UNPOOLED|POOLED|JNDI</span><br><span class="line">                        UNPOOLED: 这个数据源的实现是每次被请求时简单打开和关闭连接</span><br><span class="line">                        POOLED:这是 JDBC 连接对象的数据源连接池的实现</span><br><span class="line">                        JNDI:这个数据源的实现是为了使用如 Spring 或应用服务器这类的容器</span><br><span class="line">            --&gt;</span><br><span class="line">            &lt;dataSource type=&quot;POOLED&quot;&gt;</span><br><span class="line">                &lt;property name=&quot;driver&quot; value=&quot;$&#123;jdbc.driver&#125;&quot;&gt;&lt;/property&gt;</span><br><span class="line">                &lt;property name=&quot;url&quot; value=&quot;$&#123;jdbc.url&#125;&quot;&gt;&lt;/property&gt;</span><br><span class="line">                &lt;property name=&quot;username&quot; value=&quot;$&#123;jdbc.username&#125;&quot;&gt;&lt;/property&gt;</span><br><span class="line">                &lt;property name=&quot;password&quot; value=&quot;$&#123;jdbc.password&#125;&quot;&gt;&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">            &lt;/dataSource&gt;</span><br><span class="line">        &lt;/environment&gt;</span><br><span class="line">    &lt;/environments&gt;</span><br><span class="line">&lt;mappers&gt;</span><br><span class="line">    &lt;!--在核心配置文件中找到咱们的SQL映射文件--&gt;</span><br><span class="line">    &lt;mapper resource=&quot;cn/itsource/dao/Productmaper.xml&quot;&gt;&lt;/mapper&gt;</span><br><span class="line">&lt;/mappers&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+
+<p>properties文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">jdbc.driver=com.mysql.jdbc.Driver #数据库驱动</span><br><span class="line">jdbc.url=jdbc:mysql:///mybatis    #mybatis改为你的表名</span><br><span class="line">jdbc.username=root    #数据库账号</span><br><span class="line">jdbc.password=123456  #数据库密码</span><br><span class="line">#四大金刚</span><br></pre></td></tr></table></figure>
+
+<p>核心文件中有一个mappers,它指向了一个映射文件。映射文件在哪？</p>
+<p>,这个xml就是咱们需要的映射文件，它就可以体现出ORM，并且在这里面,也可以愉快的写sql语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; </span><br><span class="line">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line">&lt;!-- </span><br><span class="line">	这个Mapper的主要功能就是写sql</span><br><span class="line">	mapper:根</span><br><span class="line">	namespace:命令空间 (用来确定唯一) 以前这个是可以不加的,现在必需加</span><br><span class="line">     namespace的值，规则的：映射文件XxxMapper.xml所在的包+domain类名+Mapper</span><br><span class="line"> --&gt;</span><br><span class="line">&lt;mapper namespace=&quot;cn.itsource.mybatis.day1._1_hello.ProductMapper&quot;&gt;</span><br><span class="line">	&lt;!-- </span><br><span class="line">		select : 这里面写查询语句</span><br><span class="line">		id:用来确定这条sql语句的唯一</span><br><span class="line">			   以后我们确定唯一,也就是找sql语句 : namespace +.+ id</span><br><span class="line">			 例: cn.itsource.mybatis.day1._1_hello.ProductMapper.get</span><br><span class="line">		parameterType : 传入的参数类型  long:大Long  _long:小long (具体的对应请参见文档)</span><br><span class="line">		resultType : 结果类型(第一条数据返回的对象类型) 自己的对象一定是全限定类名</span><br><span class="line">	 --&gt;</span><br><span class="line">	&lt;select id=&quot;get&quot; parameterType=&quot;long&quot; resultType=&quot;cn.itsource.domain.Product&quot;&gt;</span><br><span class="line">		select * from product where id = #&#123;id&#125;</span><br><span class="line">	&lt;/select&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项</p>
+<p>我们的映射文件一般情况下是和它对应的domain实体类在同一个层级<br>② 这个映射文件的名称一般叫做 XxxMapper.xml (Xxx代表的是实体类名称)<br>③ namespace的名称为了确定唯一性，请大家根据我的要求取名<br>    如我们有一个类：<br>    cn.itsource.domain.Product / cn.itsource.domain.Student<br>    那这里取名应该是：<br>    cn.itsource.domain.ProductMapper /cn.itsource.domain.StudentMapper<br>④ 除了MyBatis支持的类型，其它的类型都通通使用全限定名    </p>
+<p> 配置完后我们需要了解几个类<br>     2 拿到SqlSessionFactory之前需要读取核心的xml配置文件<br>     3 需要构造者(SqlSessionFactoryBuilder)来创建它</p>
+<p>咱们说过，需要通过它去拿到一个SqlSession对象(相当于JDBC的连接)<br>必需要有SqlSession这个对象，我们才可以去执行相应的Sql</p>
+<h2 id="这里使用一个简单的类与数据库表来测试一下"><a href="#这里使用一个简单的类与数据库表来测试一下" class="headerlink" title="这里使用一个简单的类与数据库表来测试一下"></a>这里使用一个简单的类与数据库表来测试一下</h2><p> <img src="https://img-blog.csdnimg.cn/20190801211818911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pjZXRwb29y,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">省略getset方法与tostring<br> 表<br> <img src="https://img-blog.csdnimg.cn/20190801211925878.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pjZXRwb29y,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--命名空间--&gt;</span><br><span class="line">&lt;mapper namespace=&quot;cn.itsource.dao.Productmaper&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--查找所有--&gt;</span><br><span class="line">    &lt;select id=&quot;findAll&quot; resultType=&quot;Product&quot;&gt;</span><br><span class="line">            select * from product</span><br><span class="line">    &lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 写一个工具类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">public class MyBatisUtil &#123;</span><br><span class="line">    private static SqlSessionFactory factory;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 静态代码块加载对象</span><br><span class="line">     */</span><br><span class="line">    static &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            //读取配置文件</span><br><span class="line">            Reader resourceAsReader = Resources.getResourceAsReader(&quot;mybatis-config.xml&quot;);</span><br><span class="line">            //创建工厂</span><br><span class="line">            factory = new SqlSessionFactoryBuilder().build(resourceAsReader);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            System.err.println(e.getMessage()+&quot;配置文件可能出错&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 获取sqlSession对象</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public static SqlSession getSqlSessionInstance()&#123;</span><br><span class="line">        return factory.openSession();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 测试类<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">    public void testutil2() throws Exception &#123;</span><br><span class="line">        SqlSession sqlSessionInstance = MyBatisUtil.getSqlSessionInstance();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        List&lt;Product&gt; list =  sqlSessionInstance</span><br><span class="line">        		.selectList(&quot;cn.itsource.dao.Productmaper.findAll&quot;);</span><br><span class="line">        System.out.println(list);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p> 测试无误<br> <img src="https://img-blog.csdnimg.cn/20190801212419633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pjZXRwb29y,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">`接下来写dao层crud</p>
+<p> 接口<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> package cn.itsource.dao;</span><br><span class="line"></span><br><span class="line">import cn.itsource.domain.Product;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Product  CRUD</span><br><span class="line"> */</span><br><span class="line">public interface IProductDao &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    void delete(Long id);</span><br><span class="line"></span><br><span class="line">    void update(Product product);</span><br><span class="line"></span><br><span class="line">    void add(Product product);</span><br><span class="line"></span><br><span class="line">    List&lt;Product&gt; findall();</span><br><span class="line"></span><br><span class="line">    Product findOne(Long id);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">`</span><br></pre></td></tr></table></figure></p>
+<p> 实现类<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"> package cn.itsource.dao.impl;</span><br><span class="line"></span><br><span class="line">import cn.itsource.dao.IProductDao;</span><br><span class="line">import cn.itsource.domain.Product;</span><br><span class="line">import cn.itsource.utils.MyBatisUtil;</span><br><span class="line">import org.apache.ibatis.session.SqlSession;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * CRUD  </span><br><span class="line"> */</span><br><span class="line">public class ProductDaoImpl implements IProductDao &#123;</span><br><span class="line">    public static final String NAMESPACE = &quot;cn.itsource.dao.Productmaper.&quot;;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void delete(Long id) &#123;</span><br><span class="line">        SqlSession session = MyBatisUtil.getSqlSessionInstance();</span><br><span class="line">        try &#123;</span><br><span class="line">            session.delete(NAMESPACE + &quot;delete&quot;, id);</span><br><span class="line">            session.commit();</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            session.rollback();</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            session.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void update(Product product) &#123;</span><br><span class="line">        SqlSession session = MyBatisUtil.getSqlSessionInstance();</span><br><span class="line">        try &#123;</span><br><span class="line">            session.update(NAMESPACE + &quot;update&quot;, product);</span><br><span class="line">            session.commit();</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            session.rollback();</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            session.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void add(Product product) &#123;</span><br><span class="line">        SqlSession session = MyBatisUtil.getSqlSessionInstance();</span><br><span class="line">        try &#123;</span><br><span class="line">            session.insert(&quot;cn.itsource.dao.Productmaper.add&quot;, product);</span><br><span class="line">            session.commit();</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            session.rollback();</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;finally &#123;</span><br><span class="line">            session.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public List&lt;Product&gt; findall() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            return MyBatisUtil.getSqlSessionInstance().selectList(&quot;cn.itsource.dao.Productmaper.findAll&quot;);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Product findOne(Long id) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            return MyBatisUtil.getSqlSessionInstance().selectOne(&quot;cn.itsource.dao.Productmaper.findOne&quot;, id);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在配置文件中写sql</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span><br><span class="line">        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--命名空间--&gt;</span><br><span class="line">&lt;mapper namespace=&quot;cn.itsource.dao.Productmaper&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--查找一个--&gt;</span><br><span class="line">    &lt;select id=&quot;findOne&quot; parameterType=&quot;long&quot; resultType=&quot;cn.itsource.domain.Product&quot;&gt;</span><br><span class="line">            select * from product where id = #&#123;id&#125;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">&lt;!-- 查询所有 的sql  --&gt;</span><br><span class="line">    &lt;select id=&quot;findAll&quot; resultType=&quot;Product&quot;&gt;</span><br><span class="line">            select * from product</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">&lt;!-- 添加sql  --&gt;</span><br><span class="line">    &lt;!--useGeneratedKeys=&quot;true&quot; keyColumn=&quot;id&quot; keyProperty=&quot;id&quot; 添加后获取主键 --&gt;</span><br><span class="line">    &lt;insert id=&quot;add&quot; parameterType=&quot;cn.itsource.domain.Product&quot; useGeneratedKeys=&quot;true&quot; keyColumn=&quot;id&quot; keyProperty=&quot;id&quot;&gt;</span><br><span class="line">        INSERT INTO product</span><br><span class="line">        (productName,dir_id,salePrice,supplier,brand,cutoff,costPrice)</span><br><span class="line">        values</span><br><span class="line">        (#&#123;productName&#125;,#&#123;dir_id&#125;,#&#123;salePrice&#125;,#&#123;supplier&#125;,#&#123;brand&#125;,#&#123;cutoff&#125;,#&#123;costPrice&#125;)</span><br><span class="line">    &lt;/insert&gt;</span><br><span class="line">&lt;!-- 删除sql  --&gt;</span><br><span class="line">    &lt;delete id=&quot;delete&quot; parameterType=&quot;long&quot;&gt;</span><br><span class="line">        delete from product where id = #&#123;id&#125;</span><br><span class="line">    &lt;/delete&gt;</span><br><span class="line">&lt;!-- 更新sql  --&gt;</span><br><span class="line">    &lt;update id=&quot;update&quot; parameterType=&quot;cn.itsource.domain.Product&quot;&gt;</span><br><span class="line">        update product</span><br><span class="line">          set productName = #&#123;productName&#125;,</span><br><span class="line">             dir_id = #&#123;dir_id&#125;,</span><br><span class="line">             salePrice = #&#123;salePrice&#125;,</span><br><span class="line">             supplier = #&#123;supplier&#125;,</span><br><span class="line">             brand = #&#123;brand&#125;,</span><br><span class="line">             cutoff = #&#123;cutoff&#125;,</span><br><span class="line">             costPrice = #&#123;costPrice&#125;</span><br><span class="line">        where id = #&#123;id&#125;</span><br><span class="line">    &lt;/update&gt;</span><br><span class="line"></span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"> 测试类</span><br><span class="line">package cn.itsource.Test;</span><br><span class="line"></span><br><span class="line">import cn.itsource.dao.IProductDao;</span><br><span class="line">import cn.itsource.dao.impl.ProductDaoImpl;</span><br><span class="line">import cn.itsource.domain.Product;</span><br><span class="line">import cn.itsource.utils.MyBatisUtil;</span><br><span class="line">import org.apache.ibatis.io.Resources;</span><br><span class="line">import org.apache.ibatis.session.SqlSession;</span><br><span class="line">import org.apache.ibatis.session.SqlSessionFactoryBuilder;</span><br><span class="line">import org.junit.Test;</span><br><span class="line"></span><br><span class="line">import java.io.Reader;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public class MybatisimplTest &#123;</span><br><span class="line">    @Test</span><br><span class="line">    public void test() throws Exception &#123;</span><br><span class="line">        IProductDao productDao = new ProductDaoImpl();</span><br><span class="line">        List&lt;Product&gt; findall = productDao.findall();</span><br><span class="line">        findall.forEach( v -&gt; System.out.println(v));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void testfindone() throws Exception &#123;</span><br><span class="line">        IProductDao productDao = new ProductDaoImpl();</span><br><span class="line">        Product one = productDao.findOne(1L);</span><br><span class="line">        System.out.println(one);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    @Test</span><br><span class="line">    public void testadd() throws Exception &#123;</span><br><span class="line">        IProductDao productDao = new ProductDaoImpl();</span><br><span class="line">        Product one1 = productDao.findOne(2L);</span><br><span class="line">        one1.setId(null);</span><br><span class="line">        productDao.add(one1);</span><br><span class="line">        System.out.println(one1);</span><br><span class="line">    &#125;</span><br><span class="line">    @Test</span><br><span class="line">    public void testupdate() throws Exception &#123;</span><br><span class="line">        IProductDao productDao = new ProductDaoImpl();</span><br><span class="line">        Product one1 = productDao.findOne(1L);</span><br><span class="line">        one1.setProductName(&quot;张扬&quot;);</span><br><span class="line">        productDao.update(one1);</span><br><span class="line">    &#125;</span><br><span class="line">    @Test</span><br><span class="line">    public void testdelete() throws Exception &#123;</span><br><span class="line">        IProductDao productDao = new ProductDaoImpl();</span><br><span class="line">        productDao.delete(1L);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>crud注意事项</p>
+<p>下面的点都很重要，是大家在使用MyBatis的时候经常出现的点。希望大家引起重视。出现问题的时候心态放平,不要狂躁,慢慢的找。基本咱们使用MyBatis中出的错都在这里。<br>使用框架的时候配置信息变多，在配置里写的都是字符串，而且经常是要对应的。因为，这里希望大家要切记：写的时候细心，出现错误找字符串要耐心，<br>    1 主配置中未配置相应的mapper(当然，这个路径也可能写错)<br>    2 在代码中调用Sql的时候路径写错<br>    3  Sql写错,这个应该还好找<br>    4 当我们在配置文件中很多地方如果写错，即便是你还没有使用也可能会报错<br>    5 写Sql的标签不需要全部一致(如添加不一定必需使用insert),但是它的属性会不同<br>    6 在传入与返回参数时全限定类名写错<br>    在开发的时候，要边做边测试。 在某一步出现错误后，删除新加的代码看有没有问题，如果删除部分代码后运行成功，就相应的可以缩小排错的范围。</p>
+<h4 id="SqlSessionFactoryBuilder"><a href="#SqlSessionFactoryBuilder" class="headerlink" title="SqlSessionFactoryBuilder"></a>SqlSessionFactoryBuilder</h4><p>建造者模式:我们最后拿到的这个对象是非常复杂的. 用这个建造者就它先为我们把这些复杂的代码完成.<br>这个类可以被实例化，使用和丢弃。一旦你创建了SqlSessionFactory后，这个SqlSessionFactoryBuilder类就不需要存在了。因此SqlSessionFactoryBuilder实例的最佳范围是方法范围（也就是本地方法变量）。<br>你可以重用SqlSessionFactoryBuilder来创建多个SqlSessionFactory实例，但是最好的方式是<br>不需要保持它一直存在来保证所有XML解析资源，因为还有更重要的事情要做。<br> <strong>总结来说就是用完可以随意丢弃且只用一次,</strong></p>
+<h4 id="SqlSessionFactory-类似于jpa的EntityMangerFactory"><a href="#SqlSessionFactory-类似于jpa的EntityMangerFactory" class="headerlink" title="SqlSessionFactory(类似于jpa的EntityMangerFactory)"></a>SqlSessionFactory(类似于jpa的EntityMangerFactory)</h4><p> 一旦被创建，SqlSessionFactory应该在你的应用执行期间都存在。没有理由来处理或重新创建它。使用SqlSessionFactory的最佳实践是在应用运行期间不要重复创建多次<br>** 是一个重量级对象   , 我们使用静态代码块单例模式**</p>
+<h4 id="SqlSession"><a href="#SqlSession" class="headerlink" title="SqlSession"></a>SqlSession</h4><p>每个线程都应该有它自己的SqlSession实例。SqlSession的实例不能被共享，也是线程不安全的。因此最佳的范围是请求或方法范围。<br><strong>绝对不能将SqlSession实例的引用放在一个类的静态字段甚至是实例字段中。<br>也绝不能将SqlSession实例的引用放在任何类型的管理范围中，比如Serlvet架构中的HttpSession。</strong></p>
+<p>如果你现在正用任意的Web框架，要考虑SqlSession放在一个和HTTP请求对象相似的范围内。换句话说，基于收到的HTTP请求，你可以打开了一个SqlSession，然后返回响应，就可以关闭它了。关闭Session很重要， </p>
+<h3 id="列名与属性名不对应的解决方案-resultMap"><a href="#列名与属性名不对应的解决方案-resultMap" class="headerlink" title="列名与属性名不对应的解决方案  resultMap"></a>列名与属性名不对应的解决方案  resultMap</h3><p>大家应该有注意到，前面咱们做映射文件的时候，只做了表与对象之间的联系。并没有做列与字段之间的联系。那么它们之间是怎么联系上的呢？<br>由于之前咱们的列名与属性名是一样的，因此框架进行了自动的识别。<br>那么：如果咱们的列名与属性名不一致了(对应不上)，这时候应该怎么办呢？<br>这时候，就需要我们开发人员告诉MyBatis，我们需要把哪些列名与属性名对应上。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190801213637960.png" alt="在这里插入图片描述"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/19/mybatisOne/" data-id="ck0ulbmdc000694v6s5n15kee" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/28/mybatisTwo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          mybatis 的十分详细的入门教程第二弹
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/02/部分的知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于注解部分的知识</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/18/cloud与dubbo的区别详解/">Springcloud与dubbo的区别详解</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/10/mybatis/">mybatis中的$与#</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/28/mybatisTwo/">mybatis 的十分详细的入门教程第二弹</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/19/mybatisOne/">mybatis 的十分详细的入门教程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/02/部分的知识/">关于注解部分的知识</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 an9527<br>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
